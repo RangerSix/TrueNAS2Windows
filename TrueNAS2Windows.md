@@ -1,11 +1,11 @@
-# Windows 11 to TrueNas Scale: Direct Connection.
+# Windows 11 to TrueNAS Scale: Direct Connection.
 No switch required. 
 This is for home labs that don't need remote access.
 ---
 First: You need 2 NICs on your windows pc. One for your internet access and one for the connection to the NAS.
 And of course a ethernet cable that will reach your nas machine.
 ---
-Why?! 1.SPEED 2.Isolation from Web (well,mostly). 3.SPEED.
+Why?! 1. SPEED. 2.Isolation from Web (well,mostly). 3. SPEED.
 You will get great speed using 2.5Gbs NICs. ISOs that took mins now take seconds.
 ---
 Lets start with the NAS: 
