@@ -5,7 +5,7 @@ This is for home labs that don't need remote access.
 First: You need 2 NICs on your windows pc. One for your internet access and one for the connection to the NAS.
 And of course a ethernet cable that will reach your nas machine.
 ---
-Why?! 1. SPEED. 2.Isolation from Web (well,mostly). 3. SPEED.
+Why?! 1. SPEED. 2. Isolation from Web (well,mostly). 3. SPEED.
 You will get great speed using 2.5Gbs NICs. ISOs that took mins now take seconds.
 ---
 Lets start with the NAS: 
@@ -75,6 +75,9 @@ Now lets connect TrueNAS device to Windows PC. As soon as you connect the two yo
 Open your favorite browser on your windows pc and type the address you gave TrueNAS.
  192.168.100.10
 You should be greeted at the TrueNAS login screen.  
+
+# Now Time For Security Setup. To isolate and firewall the connection.
+---
 
 
 
