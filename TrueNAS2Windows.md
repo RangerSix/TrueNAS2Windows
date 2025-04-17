@@ -76,7 +76,7 @@ Open your favorite browser on your windows pc and type the address you gave True
  192.168.100.10
 You should be greeted at the TrueNAS login screen.  
 
-# Now Time For Security Setup. To isolate and firewall the connection.
+# Now Time For Security Setup. To isolate and firewall the connection. See the Let's Talk Security.md.
 ---
 
 
