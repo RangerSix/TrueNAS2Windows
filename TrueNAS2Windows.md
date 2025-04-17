@@ -1,31 +1,39 @@
-Windows 11 to TrueNas Scale: Direct Connection.
+# Windows 11 to TrueNas Scale: Direct Connection.
 No switch required. 
 This is for home labs that don't need remote access.
-
+---
 First: You need 2 NICs on your windows pc. One for your internet access and one for the connection to the NAS.
 And of course a ethernet cable that will reach your nas machine.
-
-Lets start with the NAS: I am using the latest stable version of TrueNAS Scale.
-   Intall TrueNAS: Install without Ethernet cable hooked up. 
-     After install it should say, not able configure web interface.
-   At the CLi choose option 7, Open Linux Shell. I tried using static routes and network interfaces but it would never work.
+---
+Lets start with the NAS: 
+    I am using the latest stable version of TrueNAS Scale.
+Intall TrueNAS: Install without Ethernet cable hooked up.
+After install it should say, not able configure web interface.
+At the CLi choose option 7, Open Linux Shell. I tried using static routes and network interfaces but it would never work.
    Now in the Linux Shell, we want to edit the /etc/network/interfaces file.
+   
    But first we need the name of the correct interface (e.g.,eth0 or eno1).
    To get this type:
+   
          ip a
+         
    This should give you the interface name of your NIC.
 
    Now we use nano to edit the interfaces file:
+   
          nano /etc/network/interfaces  
    
 Now in the file, add the following lines:
+
          auto eth0
          iface eth0 inet static
              address 192.168.100.10
              netmask 255.255.255.0
+             
 Make sure to replace eth0 with the interface name you got earlier. 
 
 Save the file:
+
          Ctrl+X, then Y, then enter.
 
 Restart NAS.
@@ -38,14 +46,21 @@ For now we will call NIC1 is the Web Access card. NIC2 will be the Direct Connec
 You shouldn't need to change anything with NIC1 (Web Access NIC).
 
 We need to configure NIC2.
-On the windows pc press Win+R then type ncpa.cpl, hit enter. This should open a window with your NICs listed. We want to Right-click on the NIC we are going to use for direct connection and select "Properties".
+On the windows pc press Win+R then type
+
+     ncpa.cpl
+
+hit enter. This should open a window with your NICs listed. We want to Right-click on the NIC we are going to use for direct connection and select "Properties".
 In the new window select Internet Protocol Version 4 (TCP/IPv4) and click "Properties"
 Choose "Use the following IP address" and set:
-IP address: 192.168.100.20
-Subnet mask: 255.255.255.0
-Default gateway: (Leave this Blank)
+
+    IP address: 192.168.100.20
+    Subnet mask: 255.255.255.0
+    Default gateway: (Leave this Blank)
+    
 Skip DNS settings. This helps with windows not seeing this connection as a web connection.
-Save settings. You can also rename the connection if you want to, like NAS or HomeNas.
+Save settings.
+You can also rename the connection if you want to, like NAS or HomeNas.
 
 Ok now at this point we have TrueNAS with a static address of 192.168.100.10.
 Windows NIC2 with a static address of 192.168.100.20.
