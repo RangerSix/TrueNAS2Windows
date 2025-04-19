@@ -112,6 +112,7 @@ Since the automatic settings aren’t working for your direct connection, you mu
 ## Additional Steps: Security Setup
 
 Once you’ve confirmed that the direct connection is working correctly, it’s a good idea to consider security enhancements. Isolate this connection further and establish a firewall route tailored to protect your NAS and the data it serves. For detailed instructions on security settings, you might want to refer to additional guides like “Let’s Talk Security.”
+I am currently working on a script to help with configuring the windows firewall rules with isolation. SMB share port might be a problem.
 
 ---
 
