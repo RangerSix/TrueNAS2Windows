@@ -1,4 +1,4 @@
-Below is a rewritten version of the guide that walks you through setting up a direct connection between TrueNAS Scale and a Windows 11 PC without using a switch. This configuration is ideal for home lab environments where you want lightning-fast transfers, complete isolation from the Internet on your NAS connection, and overall network efficiency.
+Below is a guide that walks you through setting up a direct connection between TrueNAS Scale and a Windows 11 PC without using a switch. This configuration is ideal for home lab environments where you want lightning-fast transfers, complete isolation from the Internet on your NAS connection, and overall network efficiency.
 
 ---
 
